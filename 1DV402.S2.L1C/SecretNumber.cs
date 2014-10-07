@@ -34,11 +34,11 @@ namespace _1DV402.S2.L1C
             get
             {
                 // Check if we are out of guesses, or the right number is guessed.
-                if (Count >= MaxNumberOfGuesses || Outcome == Outcome.Right)  
+                if (Count >= MaxNumberOfGuesses || Outcome == Outcome.Right)
                 {
                     return false;
                 }
-                return _canMakeGuess;
+                return true;
             }
             private set
             {
@@ -55,7 +55,7 @@ namespace _1DV402.S2.L1C
             private set
             {
                 // Increase count as long as it does not reach too high value
-                if(_count >= MaxNumberOfGuesses)
+                if (_count >= MaxNumberOfGuesses)
                 {
                     _count = 0; 
                 }
@@ -76,13 +76,13 @@ namespace _1DV402.S2.L1C
             get
             {
                 // Init a ReadOnlyCollection with GuessedNumber type.
-                ReadOnlyCollection<GuessedNumber> _readOnlyCollection;
+                ReadOnlyCollection<GuessedNumber> readOnlyCollection;
 
                 // Put array of GuessedNumbers into ReadOnlyCollection
-                _readOnlyCollection = Array.AsReadOnly(_guessedNumbers);
+                readOnlyCollection = Array.AsReadOnly(_guessedNumbers);
 
                 // Fetch array from our ReadOnlyCollection and return it.
-                return _readOnlyCollection.ToArray();
+                return readOnlyCollection.ToArray();
             }
         }
 
@@ -125,10 +125,10 @@ namespace _1DV402.S2.L1C
         /// </summary>
         public void Initialize()
         {
-            Random _random = new Random();
+            Random random = new Random();
 
             // Declare random number between 1 and 100.
-            Number = _random.Next(1, 100);
+            Number = random.Next(1, 100);
 
             // Set standard values for object properties.
             Outcome = Outcome.Indefinite;
@@ -175,9 +175,6 @@ namespace _1DV402.S2.L1C
                 return Outcome; // Abort
             }
 
-            // Increase Guesscount by one
-            Count += 1;
-
             // Check if value is the right value, too low or too high
             if (guess == _number)
             {
@@ -198,8 +195,12 @@ namespace _1DV402.S2.L1C
                 if (guessed.Number == guess)
                 {
                     Outcome = Outcome.OldGuess;
+                    return Outcome;
                 }
             }
+
+            // Increase Guesscount by one
+            Count += 1;
 
             // Store this guess
             _guessedNumbers[Count - 1].Number = guess;

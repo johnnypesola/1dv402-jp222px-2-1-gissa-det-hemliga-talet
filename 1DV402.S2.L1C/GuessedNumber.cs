@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace _1DV402.S2.L1C
 {
-
     public struct GuessedNumber
     {
         public int? Number;
         public Outcome Outcome;
     }
-
-
 }
