@@ -3,15 +3,16 @@
   <Class Name="_1DV402.S2.L1C.SecretNumber">
     <Position X="0.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAQAAAUEAAAQAAAIBAEAAAACAAhBAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAQAAAUEAAAYAAQIBAEAAAACAAhBAAAA=</HashCode>
       <FileName>SecretNumber.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="_1DV402.S2.L1C.GuessedNumber" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SecretNumber.cs</FileName>
+      <FileName>GuessedNumber.cs</FileName>
+      <NewMemberFileName>SecretNumber.cs</NewMemberFileName>
     </TypeIdentifier>
   </Struct>
   <Enum Name="_1DV402.S2.L1C.Outcome" Collapsed="true">
